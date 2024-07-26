@@ -6,6 +6,7 @@ import { updateUserStart, updateUserFailure, updateUserSuccess, deleteUserFailur
 import { useDispatch } from "react-redux";
 import {Link} from 'react-router-dom';
 
+
 export default function Profile() {
   const fileRef = useRef(null);
   const {currentUser, loading, error} = useSelector((state)=> state.user)
@@ -14,6 +15,8 @@ export default function Profile() {
   const [fileUploadError, setFileUploadError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSucess, setUpdateSuccess] = useState(false);
+  const [showListingsError, setShowListingsError] = useState(false);
+  const [userListings, setUserListings] = useState([]);
   
   const dispatch = useDispatch();
   
@@ -109,6 +112,20 @@ const handleSignOut = async ()=>{
     dispatch(signInFailure(data.message));
   }
 }
+const handleShowListings = async ()=>{
+  try {
+    setShowListingsError(false);
+    const res = await fetch(`/api/user/listings/${currentUser._id}`);
+    const data = await res.json();
+    if(data.success === false){
+      setShowListingsError(true);
+      return;
+    }
+    setUserListings(data);
+  } catch (error) {
+    setShowListingsError(true);
+  }
+}
 
 
   return (
@@ -140,12 +157,39 @@ const handleSignOut = async ()=>{
 
         
       </form>
+
       <div className="flex justify-between mt-4">
         <span onClick={handleDeleteUser} className="text-red-600 cursor-pointer">Delete account</span>
         <span onClick={handleSignOut} className="text-red-600 cursor-pointer">Sign Out</span>
       </div>
       <p className="text-red-700 mt-5">{error ? error: ''}</p>
       <p className="text-green-700 mt-5">{updateSucess ? 'User updated successfully': ''}</p>
-    </div>
-  )
-}
+      <button onClick={handleShowListings} className="text-green-600 w-full ">Show Listings</button>
+      <p className="text-red-600 mt-5" >{showListingsError ? 'Error showing listings' : ''}</p>
+     
+
+     {userListings && 
+     userListings.length > 0 &&
+    <div className="flex flex-col gap-3">
+      <h1 className="text-center mt-7 text-2xl font-semibold">Your Listings</h1>
+       {userListings.map((listing) => (
+      <div key={listing._id} className="border rounded-lg p-3 flex justify-between items-center">
+        <Link to={`/listing/${listing._id}`} ><img src={listing.imageUrls[0]} alt="listing cover" className="h-16 w-16 object-contain p-3" /></Link>
+
+        <Link className="text-slate-700 font-semibold flex-1 hover:underline trucate" to={`/listing/${listing._id}`} >
+        <p>
+        {listing.name}
+        </p>
+        </Link>
+        <div className="flex flex-col">
+          <button className="text-red-700 uppercase">Delete</button>
+          <button className="text-green-700 uppercase">Edit</button>
+         </div>
+      </div>
+     ))}
+
+
+    </div>}
+     </div>
+     )}
+    
