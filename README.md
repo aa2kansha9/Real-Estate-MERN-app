@@ -38,16 +38,19 @@ AI Chatbot- Integration of an AI-powered chatbot using natural language processi
 
 ## Screenshots
 
-![Screenshot 2024-08-17 174326](https://github.com/user-attachments/assets/ae86316f-7379-48f8-953e-a0fcdf5363cf)
+<img width="1916" height="834" alt="Screenshot 2025-07-20 100027" src="https://github.com/user-attachments/assets/e83f2589-b763-4e66-a88e-8f6a1af0d578" />
 
-![Screenshot 2024-08-17 180657](https://github.com/user-attachments/assets/6c2915b4-5309-4d42-9537-8b458410ee74)
+<img width="1919" height="912" alt="Screenshot 2025-07-20 100042" src="https://github.com/user-attachments/assets/22a47fef-021d-406a-b1b7-f214c3fc4080" />
 
-![Screenshot 2024-08-17 181447](https://github.com/user-attachments/assets/eeb27d58-9741-4a0e-8b10-b8e03343586e)
-![Screenshot 2024-08-17 181602](https://github.com/user-attachments/assets/5764b30f-8d18-40b6-a355-48c638e1de26)
-![image](https://github.com/user-attachments/assets/04113fb1-92b0-4353-bea1-805d84d7d77e)
+<img width="1888" height="646" alt="Screenshot 2025-07-20 100106" src="https://github.com/user-attachments/assets/0c85fd6c-2a07-4200-9667-1fa8a4ef6913" />
 
+<img width="1864" height="863" alt="Screenshot 2025-07-20 100119" src="https://github.com/user-attachments/assets/bf166772-6cf0-4316-9b68-244ed3374b23" />
 
+<img width="1879" height="906" alt="Screenshot 2025-07-20 100211" src="https://github.com/user-attachments/assets/535fbe78-8ba3-46cb-943a-1db9cc273d9c" />
 
+<img width="1878" height="830" alt="Screenshot 2025-07-20 100234" src="https://github.com/user-attachments/assets/477e31ca-95a5-4c2a-8b3d-cbddbe68d592" />
+
+<img width="1897" height="843" alt="Screenshot 2025-07-20 100442" src="https://github.com/user-attachments/assets/957503e3-0c02-48e7-99a6-3c6755f7c965" />
 
 
 
